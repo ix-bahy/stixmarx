@@ -56,9 +56,10 @@ def is_attribute(node):
 
 def is_content(node):
     """Return True if the input `node` is a text node."""
-    return ((isinstance(node, etree._ElementStringResult) or
-            isinstance(node, etree._ElementUnicodeResult)) and
-            not is_attribute(node))
+    return (
+            isinstance(node, etree._ElementUnicodeResult) and
+            not is_attribute(node)
+        )
 
 
 def is_typed(node):
